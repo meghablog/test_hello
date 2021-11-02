@@ -1,8 +1,8 @@
-From python:3.4-alpine
+From python:3.10.0
 
 WORKDIR /app
 
 COPY requirement.txt requirement.txt
-RUN pip install -r requeirement.txt
+RUN pip install -r requirement.txt
 
-CMD {"python3","-m","flask","run","--host=0.0.0.0:50"}
+CMD ['python', 'manage.py', 'runserver', '0.0.0.0:80']
